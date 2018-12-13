@@ -9,9 +9,9 @@ import lejos.utility.Delay;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class LCDDrawRectanglesTest {
+public class LCDWriteTextTest2 {
 
-    public static Logger LOGGER = LoggerFactory.getLogger(LCDArcDemo.class);
+    public static Logger LOGGER = LoggerFactory.getLogger(LCDWriteTextTest2.class);
 
     public static GraphicsLCD lcd = LCD.getInstance();
 
@@ -24,23 +24,28 @@ public class LCDDrawRectanglesTest {
         LOGGER.info("EV3 LCD Example");
 
         clear();
-        //lcd.setColor(Color.BLACK);
-        lcd.setColor(0,0,0);
-        lcd.drawRect(0, 0, 20, 20);
-        lcd.drawRect(40, 40, 20, 20);
-
-        lcd.drawRoundRect(80 , 80, 40, 40, 10,5);
-
-        lcd.refresh();
-
+        writeMessage("Juanito");
+        Delay.msDelay(5000);
+        clear();
+        writeMessage("Jorgito");
+        Delay.msDelay(5000);
+        clear();
+        writeMessage("Pablito");
         Delay.msDelay(5000);
     }
 
+
+    public static void writeMessage(final String message){
+        //lcd.setColor(Color.BLACK);
+        lcd.setColor(0,0,0);
+        lcd.drawString(message, 50,50, 0, true);
+        lcd.refresh();
+    }
 
     public static void clear(){
         //lcd.setColor(Color.WHITE);
         lcd.setColor(255,255,255);
         lcd.fillRect(0,0, lcd.getWidth(), lcd.getHeight());
-    }
 
+    }
 }

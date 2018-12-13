@@ -9,9 +9,9 @@ import lejos.utility.Delay;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class LCDDrawRectanglesTest {
+public class LCDCopyAreaTest {
 
-    public static Logger LOGGER = LoggerFactory.getLogger(LCDArcDemo.class);
+    public static Logger LOGGER = LoggerFactory.getLogger(LCDCopyAreaTest.class);
 
     public static GraphicsLCD lcd = LCD.getInstance();
 
@@ -27,9 +27,8 @@ public class LCDDrawRectanglesTest {
         //lcd.setColor(Color.BLACK);
         lcd.setColor(0,0,0);
         lcd.drawRect(0, 0, 20, 20);
-        lcd.drawRect(40, 40, 20, 20);
 
-        lcd.drawRoundRect(80 , 80, 40, 40, 10,5);
+        lcd.copyArea(0,0,40,40, 60,60,0);
 
         lcd.refresh();
 
