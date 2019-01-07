@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class LCDSpace {
 
-    public static Logger LOGGER = LoggerFactory.getLogger(LCDShowJavaLogoExample.class);
+    public static Logger LOGGER = LoggerFactory.getLogger(LCDSpace.class);
 
     public static GraphicsLCD lcd = LCD.getInstance();
 
